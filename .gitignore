@@ -1,0 +1,12 @@
+# Ignore build directory
+/build
+
+# Ignore source tarfiles
+/sources/*.tar.*
+
+# ignore Python compiled files
+*.pyc
+__pycache__
+
+# ignore Python packaging build files
+passepartout_package.egg-info/

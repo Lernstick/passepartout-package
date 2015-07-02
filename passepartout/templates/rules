@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	# copy menu stuff
+	mkdir -p debian/{{ name }}/usr/share/applications/
+	cp debian/{{ name }}-[1-9].desktop debian/{{ name }}/usr/share/applications
+	{% if menu_directory -%}
+	mkdir -p debian/{{ name }}/usr/share/desktop-directories
+	mkdir -p debian/{{ name }}/etc/xdg/menus/applications-merged
+	cp debian/{{ name }}.directory debian/{{ name }}/usr/share/desktop-directories
+	cp debian/{{ name }}.merge.menu debian/{{ name }}/etc/xdg/menus/applications-merged
+	{% endif -%}
+
+	# copy icon
+	{% if icon -%}
+	mkdir -p debian/{{ name }}/usr/share/icons
+	cp debian/{{ name }}.png debian/{{ name }}/usr/share/icons || true
+	{% endif -%}
+
+	# copy per menu item files
+	mkdir -p debian/{{ name }}/usr/share/{{ name }}
+	{% for entry in menuitems %}
+	{% if loop.length == 1 and not entry['directory'] %}
+	for f in * ; do \
+      if [ "$$f"  != "debian" ] ; then \
+        cp -r "$$f" debian/{{ name }}/usr/share/{{ name }} ;\
+      fi ;\
+    done
+	{% else %}
+	cp -r {{ entry['directory'] }} debian/{{ name }}/usr/share/{{ name }}
+	{% endif %}
+	{% endfor %}
+

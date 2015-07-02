@@ -1,0 +1,18 @@
+[Desktop Entry]
+{% if menu_directory -%}
+Categories=X-{{ name }};
+{% else -%}
+Categories=Education;Languages;
+{% endif -%}
+Name={{ title }}
+{% if icon -%}
+Icon=/usr/share/icons/{{ name }}.png
+{% endif -%}
+{% if start_page -%}
+Exec=chromium --start-fullscreen /usr/share/{{ name }}/{{ directory }}/{{ start_page }}
+{% else -%}
+Exec=xdg-open /usr/share/{{ name }}/{{ directory }}
+{% endif -%}
+StartupNotify=true
+Type=Application
+

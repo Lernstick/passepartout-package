@@ -1,0 +1,17 @@
+Source: {{ name }}
+Section: misc
+Priority: optional
+Maintainer: Lernstick Team <lernstick.ph@fhnw.ch>
+Uploaders: Ronny Standtke <ronny.standtke@fhnw.ch>, Gaudenz Steinlin <gaudenz.steinlin@cirrax.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+
+Package: {{ name }}
+Architecture: all
+Depends: chromium, pepperflashplugin-nonfree
+Description: {{ title }}
+{% for l in description.splitlines() -%}
+  {% if l != '' %}{{ ' ' + l }}{% else %} .{% endif %}
+{% endfor -%}
+
+

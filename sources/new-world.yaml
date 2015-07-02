@@ -1,0 +1,44 @@
+default: &default
+  title: 'New World {{ class }}'
+  debian_version: 1
+  icon: new-world-{{ class }}.png
+  source: new-world-{{ class }}-{{ upstream_version }}.tar.xz
+  menu_directory: false
+  description: |
+    Multimedia Inhalte zu New World für das {{ class + 4 }}. Schuljahr. Dieses Paket
+    enthält die Inhalte zu folgenden Heften:
+
+    {% for i in menuitems -%}
+    * {{ i['title'] }}
+    {% endfor %}
+    Dieses Paket enthält die Version {{ upstream_version }} der Multimedia
+    Inhalte{% if level %} für {% if level == 'G' %}grundlegende und mitlere{% else %}mitlere und erweiterte{% endif %} Anforderungen{% endif %}.
+
+# common settings for all menuitems
+default-menuitem: &default-menuitem
+  title: 'New World {{ class }}'
+  start_page: lmplayer.html
+  directory: ''
+
+new-world-1-2013:
+  <<: *default
+  upstream_version: 2013
+  class: 1
+  menuitems:
+    - <<: *default-menuitem
+
+new-world-2-2014:
+  <<: *default
+  upstream_version: 2014
+  class: 2
+  menuitems:
+    - <<: *default-menuitem
+
+new-world-3-2015:
+  <<: *default
+  upstream_version: 2015
+  class: 3
+  icon: 
+  menuitems:
+    - <<: *default-menuitem
+      start_page: 
