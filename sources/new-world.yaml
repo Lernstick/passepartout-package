@@ -37,8 +37,8 @@ new-world-2-2014:
 new-world-3-2015:
   <<: *default
   upstream_version: 2015
+  debian_version: 2
   class: 3
-  icon: 
   menuitems:
     - <<: *default-menuitem
       start_page: 
