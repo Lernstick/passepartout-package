@@ -97,6 +97,8 @@ class PassepartoutPackageBuilder(object):
                                               '%s-%s.desktop' % (self.package['name'], i+1)),
                                  'menu.desktop',
                                  title=entry['title'],
+                                 browser=entry['browser'],
+                                 options=entry['browser'] == 'chromium' and '--start-fullscreen' or '--new-window',
                                  directory=entry['directory'],
                                  start_page=entry['start_page'],
                                  )

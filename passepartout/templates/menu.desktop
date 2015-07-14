@@ -9,7 +9,7 @@ Name={{ title }}
 Icon=/usr/share/icons/{{ name }}.png
 {% endif -%}
 {% if start_page -%}
-Exec=chromium --start-fullscreen /usr/share/{{ name }}/{{ directory }}/{{ start_page }}
+Exec={{ browser }} {{ options }} /usr/share/{{ name }}/{{ directory }}/{{ start_page }}
 {% else -%}
 Exec=xdg-open /usr/share/{{ name }}/{{ directory }}
 {% endif -%}

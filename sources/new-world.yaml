@@ -19,6 +19,7 @@ default-menuitem: &default-menuitem
   title: 'New World {{ class }}'
   start_page: lmplayer.html
   directory: ''
+  browser: chromium
 
 new-world-1-2013:
   <<: *default
@@ -30,9 +31,11 @@ new-world-1-2013:
 new-world-2-2014:
   <<: *default
   upstream_version: 2014
+  debian_version: 2
   class: 2
   menuitems:
     - <<: *default-menuitem
+      browser: iceweasel
 
 new-world-3-2015:
   <<: *default

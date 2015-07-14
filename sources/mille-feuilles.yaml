@@ -20,6 +20,7 @@ default: &default
 default-menuitem: &default-menuitem
   title: '{{ series }} {{ class }}{{ prefix }}{% if level %} {{ level }}{% endif %} – {{ subtitle }}'
   start_page: START.html
+  browser: chromium
 
 # mille feuilles packages
 mille-feuilles-3-2013: &mille-feuilles-3-2013
