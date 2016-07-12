@@ -1,0 +1,18 @@
+Source: passepartout-package
+Section: misc
+Priority: extra
+Maintainer: Lernstick Team <lernstick.ph@fhnw.ch>
+Uploaders: Gaudenz Steinlin <gaudenz@debian.org>, Ronny Standtke <ronny.standtke@fhnw.ch>
+Build-Depends: debhelper (>=9),dh-python,python3-all,python3-setuptools
+Standards-Version: 3.9.8
+Homepage: http://www.imedias.ch/lernstick/
+Vcs-Browser: https://github.com/imedias/passepartout-package
+Vcs-Git: https://github.com/imedias/passepartout-package.git
+
+Package: passepartout-package
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Suggests: python-passepartout-package-doc
+Description: Tool to build Debian packages from Mille Feuilles, Clin d'Oeil and New World DVDs
+ This package installs a helper script to build Debian packages from
+ Passepartout DVD contents.

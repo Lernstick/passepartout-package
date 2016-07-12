@@ -1,0 +1,5 @@
+passepartout-package (1.1.0-1) lernstick-8; urgency=medium
+
+  * Initial release
+
+ -- Gaudenz Steinlin <gaudenz@debian.org>  Mon, 11 Jul 2016 21:10:15 +0200
