@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 setup(
     name='passepartout-package',
 
-    version='1.0.0',
+    version='1.1.0',
 
     description='Python script to generate Debian packages from Mille feuilles, Clin d\'Oeil and New World DVDs',
     long_description=long_description,
